@@ -1,5 +1,4 @@
 import * as React from 'react';
-import AspectRatio from '@mui/joy/AspectRatio';
 import Button from '@mui/joy/Button';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
@@ -8,22 +7,17 @@ import Chip from '@mui/joy/Chip';
 import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import Grid from '@mui/joy/Grid';
 
-export default function ProductCard() {
+
+const Item = ({ name, description, price, stock }) => {
   return (
-    <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' }}>
-      <CardOverflow>
-        <AspectRatio sx={{ minWidth: 200 }}>
-          <img
-            src="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286"
-            srcSet="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286&dpr=2 2x"
-            loading="lazy"
-            alt=""
-          />
-        </AspectRatio>
-      </CardOverflow>
+
+    <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg', margin: 1, display: 'inline-block'}}>
       <CardContent>
-        <Typography level="body-xs">Bluetooth Headset</Typography>
+        <Typography level="body-xs">
+          {description}
+        </Typography>
         <Link
           href="#product-card"
           fontWeight="md"
@@ -32,7 +26,7 @@ export default function ProductCard() {
           overlay
           endDecorator={<ArrowOutwardIcon />}
         >
-          Super Rockez A400
+          {name}
         </Link>
 
         <Typography
@@ -44,10 +38,10 @@ export default function ProductCard() {
             </Chip>
           }
         >
-          350 u$d
+          $ {price}
         </Typography>
         <Typography level="body-sm">
-          (Only <b>7</b> left in stock!)
+          (Solo quedan <b>{stock}</b> en stock!)
         </Typography>
       </CardContent>
       <CardOverflow>
@@ -58,3 +52,4 @@ export default function ProductCard() {
     </Card>
   );
 }
+export default Item

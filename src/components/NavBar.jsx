@@ -55,10 +55,9 @@ function ResponsiveAppBar() {
           <Toolbar disableGutters>
 
 
-            <StorefrontIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, cursor: 'pointer' }} />
+            <StorefrontIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
 
-
-
+          <Link to={"/ItemListContainer"} >
             <Typography
               variant="h5"
               noWrap
@@ -71,11 +70,13 @@ function ResponsiveAppBar() {
                 letterSpacing: '.3rem',
                 color: 'inherit',
                 textDecoration: 'none',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                color: 'white',
               }}
-            >
+              >
               eSHOP
             </Typography>
+              </Link>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, justifyContent: "center", alignItems: "center" }}>
               <IconButton
@@ -117,9 +118,7 @@ function ResponsiveAppBar() {
               </Menu>
             </Box>
 
-            <Link to={"/"}>
               <StorefrontIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-            </Link>
 
               <Typography
                 variant="h5"
@@ -140,21 +139,22 @@ function ResponsiveAppBar() {
               </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <Link to={"/ItemListContainer"}>
+              {/* <Link to={"/ItemListContainer"}>
                 <Button
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   Ofertas
                 </Button>
-              </Link>
-
+              </Link> */}
+              <Link to={'/category'}>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+                >
                 Mujer
               </Button>
+                </Link>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}

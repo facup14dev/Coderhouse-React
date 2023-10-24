@@ -5,9 +5,10 @@ import CardContent from "@mui/joy/CardContent";
 import CardOverflow from "@mui/joy/CardOverflow";
 import Chip from "@mui/joy/Chip";
 import Typography from "@mui/joy/Typography";
+import AspectRatio from '@mui/joy/AspectRatio';
 import { Link } from "react-router-dom";
 
-const Item = ({ name, description, price, stock, id }) => {
+const Item = ({ name, description, price, stock, id, img }) => {
   return (
     <Card
       sx={{
@@ -18,23 +19,27 @@ const Item = ({ name, description, price, stock, id }) => {
         display: "inline-block",
       }}
     >
+      <CardOverflow>
+        <Link to={`/product/${id}`}>
+          <AspectRatio sx={{ minWidth: 300 }} ratio="4/3">
+            <img
+              src={img}
+              srcSet={img}
+              loading="lazy"
+              alt=""
+            />
+          </AspectRatio>
+        </Link>
+      </CardOverflow>
+
       <CardContent>
         <Typography level="body-xs">{description}</Typography>
-        {/* <Link
-          href="#product-card"
-          fontWeight="md"
-          color="neutral"
-          textColor="text.primary"
-          overlay
-          endDecorator={<ArrowOutwardIcon />}
-        >
-          {name}
-        </Link> */}
-        <Link to={`/product/${id}`}> 
+        <Link to={`/product/${id}`}>
           <Typography
             sx={{
               fontWeight: "md",
               cursor: "pointer",
+              fontSize: 20,
             }}
           >
             {name}

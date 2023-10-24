@@ -57,26 +57,25 @@ function ResponsiveAppBar() {
 
             <StorefrontIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
 
-          <Link to={"/ItemListContainer"} >
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-                cursor: 'pointer',
-                color: 'white',
-              }}
+            <Link to={"/"} >
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                sx={{
+                  mr: 2,
+                  display: { xs: 'none', md: 'flex' },
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  letterSpacing: '.3rem',
+                  color: 'white',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                }}
               >
-              eSHOP
-            </Typography>
-              </Link>
+                eSHOP
+              </Typography>
+            </Link>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, justifyContent: "center", alignItems: "center" }}>
               <IconButton
@@ -118,55 +117,51 @@ function ResponsiveAppBar() {
               </Menu>
             </Box>
 
-              <StorefrontIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+            <StorefrontIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
 
-              <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                sx={{
-                  mr: 2,
-                  display: { xs: 'flex', md: 'none' },
-                  flexGrow: 1,
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  letterSpacing: '.3rem',
-                  color: 'inherit',
-                  textDecoration: 'none',
-                }}
-              >
-                eSHOP
-              </Typography>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              sx={{
+                mr: 2,
+                display: { xs: 'flex', md: 'none' },
+                flexGrow: 1,
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              eSHOP
+            </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {/* <Link to={"/ItemListContainer"}>
+              <Link to={`/category/${"mujer"}`}>
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 1, color: 'white', display: 'block', fontSize: 18.5, paddingRight: 3}}
                 >
-                  Ofertas
+                  Mujer
                 </Button>
-              </Link> */}
-              <Link to={'/category'}>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+              </Link>
+              <Link to={`/category/${"hombre"}`}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 1, color: 'white', display: 'block', fontSize: 18.5, paddingRight: 3 }}
                 >
-                Mujer
-              </Button>
-                </Link>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                Hombre
-              </Button>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                Niño
-              </Button>
+                  Hombre
+                </Button>
+              </Link>
+              <Link to={`/category/${"niño"}`}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 1, color: 'white', display: 'block', fontSize: 18.5, paddingRight: 3 }}
+                >
+                  Niño
+                </Button>
+              </Link>
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
@@ -213,7 +208,7 @@ function ResponsiveAppBar() {
           </Toolbar>
         </Container>
       </AppBar>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }
 export default ResponsiveAppBar;

@@ -12,11 +12,13 @@ const ItemList = ({ productos }) => {
                         <Item
 
                             key={p.id}
-                            id = {p.id}
+                            id={p.id}
                             name={p.name}
                             description={p.description}
                             price={p.price}
+                            category={p.category}
                             stock={p.stock}
+                            img={p.img}
                         />
                     )
                 })

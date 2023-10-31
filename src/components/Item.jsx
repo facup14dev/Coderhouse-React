@@ -61,11 +61,17 @@ const Item = ({ name, description, price, stock, id, img }) => {
           (Solo quedan <b>{stock}</b> en stock!)
         </Typography>
       </CardContent>
+
+
+
       <CardOverflow>
+        <Link>
         <Button variant="solid" color="danger" size="lg">
-          Añadir al carrito
+          Ver detalle
         </Button>
+        </Link>
       </CardOverflow>
+
     </Card>
   );
 };

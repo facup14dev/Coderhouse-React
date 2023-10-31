@@ -1,12 +1,9 @@
-import Navbar from "./components/Navbar"
+import Navbar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
 import Cart from "./components/Cart"
 import ItemDetailContainer from "./components/ItemDetailContainer"
-import Footer from "./components/Footer"
+import Footer from "./components/Footer/Footer"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-
-
-
 
 const App = () => {
   return (

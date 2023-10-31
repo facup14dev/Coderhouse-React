@@ -55,9 +55,9 @@ function ResponsiveAppBar() {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
 
-
+          <Link to={"/"} >
             <img src={Logo} alt="Logo" />
-
+          </Link>
             <Link to={"/"} >
               <Typography
                 variant="h5"

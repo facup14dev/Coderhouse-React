@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar"
 import ItemListContainer from "./components/ItemListContainer"
 import Cart from "./components/Cart"
 import ItemDetailContainer from "./components/ItemDetailContainer"
+import Footer from "./components/Footer"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 
@@ -25,6 +26,8 @@ const App = () => {
 
 
         </Routes>
+
+        <Footer/>
       </BrowserRouter>
     </>
   )

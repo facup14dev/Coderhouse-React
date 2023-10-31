@@ -15,6 +15,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Logo from '../../public/icons/logo.png'
 import { Link } from 'react-router-dom';
 
 const darkTheme = createTheme({
@@ -55,7 +56,7 @@ function ResponsiveAppBar() {
           <Toolbar disableGutters>
 
 
-            <StorefrontIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+            <img src={Logo} alt="Logo" />
 
             <Link to={"/"} >
               <Typography

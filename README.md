@@ -1,8 +1,9 @@
-# React + Vite
+# Proyecto Curso React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto E-Commerce.
 
-Currently, two official plugins are available:
+## Gif de demostración
+![gif](https://github.com/facup14dev/Coderhouse-React/assets/131388989/ddcfe506-d52c-45ab-8965-656b185a8ce4)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### npm install
+### npm run dev

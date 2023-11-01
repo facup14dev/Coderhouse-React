@@ -19,7 +19,6 @@ const Cart = () => {
           <p></p>
           <button className='cartitems-quantity'></button>
           <p></p>
-          <img src="" alt="remove cart" onClick={() => { removeFromCart }} />
         </div>
         <hr />
       </div>

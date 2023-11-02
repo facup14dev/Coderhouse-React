@@ -10,24 +10,11 @@ import { Link } from "react-router-dom";
 
 const Item = ({ name, description, price, stock, id, img }) => {
   return (
-    <Card
-      sx={{
-        width: 320,
-        maxWidth: "100%",
-        boxShadow: "lg",
-        margin: 1,
-        display: "inline-block",
-      }}
-    >
+    <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg", margin: 1, display: "inline-block", }}>
       <CardOverflow>
         <Link to={`/product/${id}`}>
           <AspectRatio sx={{ minWidth: 300 }} ratio="4/3">
-            <img
-              src={img}
-              srcSet={img}
-              loading="lazy"
-              alt=""
-            />
+            <img src={img} srcSet={img} loading="lazy" alt="" />
           </AspectRatio>
         </Link>
       </CardOverflow>
@@ -36,20 +23,12 @@ const Item = ({ name, description, price, stock, id, img }) => {
         <Typography level="body-xs">{description}</Typography>
         <Link to={`/product/${id}`}>
           <Typography
-            sx={{
-              fontWeight: "md",
-              cursor: "pointer",
-              fontSize: 20,
-            }}
-          >
+            sx={{fontWeight: "md", cursor: "pointer",fontSize: 20,}}>
             {name}
           </Typography>
         </Link>
 
-        <Typography
-          level="title-lg"
-          sx={{ mt: 1, fontWeight: "xl" }}
-          endDecorator={
+        <Typography level="title-lg" sx={{ mt: 1, fontWeight: "xl" }} endDecorator={
             <Chip component="span" size="sm" variant="soft" color="success">
               Oferta
             </Chip>
@@ -61,14 +40,11 @@ const Item = ({ name, description, price, stock, id, img }) => {
           (Solo quedan <b>{stock}</b> en stock!)
         </Typography>
       </CardContent>
-
-
-
       <CardOverflow>
         <Link>
-        <Button variant="solid" color="danger" size="lg">
-          Ver detalle
-        </Button>
+          <Button variant="solid" color="danger" size="lg">
+            Ver detalle
+          </Button>
         </Link>
       </CardOverflow>
 

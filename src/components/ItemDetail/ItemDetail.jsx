@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import '../ItemDetail/ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
@@ -37,17 +37,7 @@ const ItemDetail = ({ productos }) => {
                 <div className="productdisplay-right-description">
                   {p.description}
                 </div>
-                <div className="productdisplay-right-size">
-                  <h1>Seleccionar Talle</h1>
-                  <div className="productdisplay-right-sizes">
-                    <div>S</div>
-                    <div>M</div>
-                    <div>L</div>
-                    <div>XL</div>
-                    <div>XXL</div>
-                  </div>
-                </div>
-
+               
                 <ItemCount productos={p} />
 
               </div>
@@ -55,10 +45,6 @@ const ItemDetail = ({ productos }) => {
           )
         })
       }
-
-
-
-
 
     </>
   )

@@ -18,6 +18,11 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Logo from '../../public/icons/logo.png'
 import { Link } from 'react-router-dom';
 
+import { useContext } from 'react'
+import { CartContext } from '../context/ShoppingCartContext'
+
+
+
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -31,6 +36,9 @@ const pages = ['Mujer', 'Hombre', 'Niños'];
 const settings = ['Perfil', 'Mi Cuenta', 'Salir'];
 
 function ResponsiveAppBar() {
+
+  const { count } = useContext(CartContext)
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -169,7 +177,7 @@ function ResponsiveAppBar() {
 
               <Link to={"/Cart"}>
                 <IconButton size="large" color="default">
-                  <Badge badgeContent={8} color="error" anchorOrigin={{ vertical: "bottom", horizontal: "left", }}>
+                  <Badge badgeContent={count} color="error" anchorOrigin={{ vertical: "bottom", horizontal: "left", }}>
                     <ShoppingCartIcon />
                   </Badge>
                 </IconButton>

@@ -6,7 +6,7 @@ export const ShoppingCartProvider = ({
     children }) => {
     //Espacio para crear estados, variables, funciones, etc
 
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(0)
     const [cart, setCart] = useState([])
     const [selectedSize, setSelectedSize] = useState('S')
     const comision = 60815

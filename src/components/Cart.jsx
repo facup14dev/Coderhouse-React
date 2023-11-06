@@ -10,7 +10,6 @@ const Cart = () => {
 
   return (
 
-
     <div className="cartitems">
 
       <h1>Tu compra</h1>
@@ -46,10 +45,9 @@ const Cart = () => {
         }
       })}
 
-      <Checkout />
+      {cart.length < 1 ? (<h1 className='cart-empty'>Su carrito de compras está vacío</h1>) : (<Checkout />)}
 
     </div>
-
 
   )
 

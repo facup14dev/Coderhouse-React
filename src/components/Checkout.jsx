@@ -1,7 +1,10 @@
 import React from 'react'
 import './Checkout.css'
 
-const Checkout = () => {
+const Checkout = ( {productos}) => {
+
+  console.log(productos)
+
   return (
     <div className="cartitems-down">
       <div className="cartitems-total">

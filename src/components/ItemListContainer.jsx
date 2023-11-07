@@ -15,10 +15,10 @@ const ItemListContainer = () => {
 
     const itemsCollection = collection(db, 'ropa')
 
-    getDocs(itemsCollection).then((snapshot) =>{
-      const docs = snapshot.docs.map((doc) => doc.data())
+    getDocs(itemsCollection).then((response) =>{
+      // const docs = snapshot.docs.map((doc) => doc.data())
 
-      setProductos(docs)
+      setProductos(response.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     })
     
   },[])

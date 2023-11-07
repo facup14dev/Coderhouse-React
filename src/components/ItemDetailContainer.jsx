@@ -9,7 +9,6 @@ const ItemDetailContainer = () => {
   const {id} = useParams()
   const [producto, setProducto] = useState([])
 
-
   useEffect(() => {
 
     const db = getFirestore()
@@ -23,12 +22,16 @@ const ItemDetailContainer = () => {
       }
     })
     
-  })
+  },[])
+
+
+  // console.log(producto)
+  // console.log(id)
 
   return (
     <>
 
-      <ItemDetail productos={producto} />
+      <ItemDetail productos={producto} id={id} />
 
     </>
   )

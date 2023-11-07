@@ -9,6 +9,8 @@ import AspectRatio from '@mui/joy/AspectRatio';
 import { Link } from "react-router-dom";
 
 const Item = ({ name, description, price, stock, id, img }) => {
+
+
   return (
     <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg", margin: 1, display: "inline-block", }}>
       <CardOverflow>

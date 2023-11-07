@@ -4,7 +4,10 @@ import { useContext } from 'react'
 import { CartContext } from '../../context/ShoppingCartContext'
 
 
-const Counter = ({ productos }) => {
+const Counter = ({ productos, id }) => {
+
+  console.log(id)
+
 
   const { count, decrementCount, incrementCount, cart, setCart, selectedSize, setSelectedSize } = useContext(CartContext)
 
@@ -12,16 +15,35 @@ const Counter = ({ productos }) => {
     setSelectedSize(size);
   };
 
+
+  const carritoActualizado = [...cart];
+
+  const nuevoProducto = {
+    id: id,
+    cantidad: count,
+    size: selectedSize,
+  };
+
+
   const addCart = (producto) => {
-
-    const carritoActualizado = [...cart, selectedSize];
-
-    const productoExistente = carritoActualizado.find((item) => item.id === producto.id);
+    const carritoActualizado = [...cart];
+  
+    const productoExistente = carritoActualizado.find((item) => item.id === producto.id && item.size === selectedSize);
+  
     if (productoExistente) {
       productoExistente.cantidad += count;
     } else {
-      carritoActualizado.push({ ...producto, cantidad: count, selectedSize });
+      const nuevoProducto = {
+        id: id,
+        name: producto.name,
+        img: producto.img,
+        price: producto.price,
+        cantidad: count,
+        size: selectedSize,
+      };
+      carritoActualizado.push(nuevoProducto);
     }
+  
     setCart(carritoActualizado);
   };
 

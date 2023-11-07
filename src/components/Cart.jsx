@@ -8,6 +8,8 @@ const Cart = () => {
 
   const { cart } = useContext(CartContext)
 
+  console.log(cart)
+
   return (
 
     <div className="cartitems">
@@ -26,7 +28,7 @@ const Cart = () => {
       <hr />
 
       {cart.map((productos) => {
-        if (productos.id > 0) {
+        if (productos.id) {
 
           return (
             <div>
@@ -34,7 +36,7 @@ const Cart = () => {
                 <img src={productos.img} alt="" className='carticon-product-icon' />
                 <p> {productos.name} </p>
                 <p> $ {productos.price} </p>
-                <p> {productos.selectedSize} </p>
+                <p> {productos.size} </p>
                 <button className="cartitems-quantity"> {productos.cantidad} </button>
                 <p> $ {productos.price * productos.cantidad} </p>
                 <p>X</p>

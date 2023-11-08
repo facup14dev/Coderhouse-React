@@ -1,6 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Tooltip from '@mui/material/Tooltip';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -8,7 +9,6 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -63,9 +63,9 @@ function ResponsiveAppBar() {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
 
-          <Link to={"/"} >
-            <img src={Logo} alt="Logo" />
-          </Link>
+            <Link to={"/"} >
+              <img src={Logo} alt="Logo" />
+            </Link>
             <Link to={"/"} >
               <Typography
                 variant="h5"
@@ -150,7 +150,7 @@ function ResponsiveAppBar() {
               <Link to={`/category/${"mujer"}`}>
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 1, color: 'white', display: 'block', fontSize: 18.5, paddingRight: 3}}
+                  sx={{ my: 1, color: 'white', display: 'block', fontSize: 18.5, paddingRight: 3 }}
                 >
                   Mujer
                 </Button>
@@ -175,13 +175,16 @@ function ResponsiveAppBar() {
 
             <Box sx={{ flexGrow: 0 }}>
 
-              <Link to={"/Cart"}>
-                <IconButton size="large" color="default">
-                  <Badge badgeContent={countCart} color="error" anchorOrigin={{ vertical: "bottom", horizontal: "left", }}>
-                    <ShoppingCartIcon />
-                  </Badge>
-                </IconButton>
-              </Link>
+
+              <Tooltip title={countCart === 0 || countCart === undefined ? "Su carrito está vacío, añada algún producto" : ""} className='tooltip'>
+                <Link to={countCart > 0 ? "/Cart" : "#"}>
+                  <IconButton size="large" color="default" disabled={countCart === 0 || countCart === undefined}>
+                    <Badge badgeContent={countCart} color="error" anchorOrigin={{ vertical: "bottom", horizontal: "left" }}>
+                      <ShoppingCartIcon />
+                    </Badge>
+                  </IconButton>
+                </Link>
+              </Tooltip>
 
 
               <Tooltip title="Abrir Configuración">

@@ -8,7 +8,6 @@ const Cart = () => {
 
   const { cart } = useContext(CartContext)
 
-
   return (
 
     <div className="cartitems">
@@ -41,12 +40,43 @@ const Cart = () => {
                 <p>X</p>
               </div>
               <hr />
+
+              <div className="cartitems-down">
+                <div className="cartitems-total">
+                  <h1>Total</h1>
+                  <div>
+                    <div className="cartitems-total-item">
+                      <p>Subtotal</p>
+                      <p>$  {0} </p>
+                    </div>
+                    <hr />
+                    <div className="cartitems-total-item">
+                      <p>Envio</p>
+                      <p>Gratis</p>
+                    </div>
+                    <hr />
+                    <div className="cartitems-total-item">
+                      <h3>Total</h3>
+                      <h3>$  {0}</h3>
+                    </div>
+                  </div>
+                  <button>PROCEDER A LA COMPRA</button>
+                </div>
+                <div className="cartitems-promocode">
+                  <p> | Si tienes un código de descuento, ingreselo aqui</p>
+                  <div className="cartitems-promobox">
+                    <input type="text" placeholder='Codigo de Promoción' />
+                    <button>Aplicar Descuento</button>
+                  </div>
+                </div>
+              </div>
             </div>
+
           )
         }
       })}
 
-      {cart.length < 1 ? (<h1 className='cart-empty'>Su carrito de compras está vacío</h1>) : (<Checkout />)}
+      {/* {cart.length < 1 ? (<h1 className='cart-empty'>Su carrito de compras está vacío</h1>) : (<Checkout productos={cart} />)} */}
 
     </div>
 

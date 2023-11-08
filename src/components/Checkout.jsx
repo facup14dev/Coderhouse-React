@@ -3,8 +3,6 @@ import './Checkout.css'
 
 const Checkout = ( {productos}) => {
 
-  console.log(productos)
-
   return (
     <div className="cartitems-down">
       <div className="cartitems-total">

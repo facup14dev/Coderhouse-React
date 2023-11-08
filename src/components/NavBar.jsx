@@ -37,7 +37,7 @@ const settings = ['Perfil', 'Mi Cuenta', 'Salir'];
 
 function ResponsiveAppBar() {
 
-  const { count } = useContext(CartContext)
+  const { countCart } = useContext(CartContext)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -177,7 +177,7 @@ function ResponsiveAppBar() {
 
               <Link to={"/Cart"}>
                 <IconButton size="large" color="default">
-                  <Badge badgeContent={count} color="error" anchorOrigin={{ vertical: "bottom", horizontal: "left", }}>
+                  <Badge badgeContent={countCart} color="error" anchorOrigin={{ vertical: "bottom", horizontal: "left", }}>
                     <ShoppingCartIcon />
                   </Badge>
                 </IconButton>

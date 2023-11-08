@@ -3,12 +3,7 @@ import { useParams } from 'react-router-dom'
 import '../ItemDetail/ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 
-const ItemDetail = ({ productos, id }) => {
-
-
-  // const productoFiltrado = productos.filter((producto) => producto.id == id)
-
-  // console.log(productos)
+const ItemDetail = ({ productos }) => {
 
   return (
     <>
@@ -36,7 +31,7 @@ const ItemDetail = ({ productos, id }) => {
             {productos.description}
           </div>
 
-          <ItemCount productos={productos} id={id} />
+          <ItemCount productos={productos} />
 
         </div>
       </div>

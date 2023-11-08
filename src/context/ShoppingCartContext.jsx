@@ -4,15 +4,15 @@ export const CartContext = createContext(null)
 
 export const ShoppingCartProvider = ({
     children }) => {
-    //Espacio para crear estados, variables, funciones, etc
 
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
+    const [countCart, setCountCart] = useState(0)
+
 
     const [cart, setCart] = useState([])
 
     const [selectedSize, setSelectedSize] = useState('S')
     
-    const comision = 60815
 
     const decrementCount = () => {
         if(count > 1) { setCount(count - 1) ;}
@@ -24,7 +24,7 @@ export const ShoppingCartProvider = ({
 
 
     return (
-        <CartContext.Provider value={{cart, setCart, count,decrementCount, incrementCount, comision, selectedSize, setSelectedSize}}>
+        <CartContext.Provider value={{cart, setCart, count,decrementCount, incrementCount, selectedSize, setSelectedSize, countCart, setCountCart}}>
             {children}
         </CartContext.Provider>
 

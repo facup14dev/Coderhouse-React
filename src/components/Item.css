@@ -1,0 +1,44 @@
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px;
+    padding: 50px;
+}
+
+.titulo-categoria {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.card {
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    height: 300px;
+    width: 100%; 
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}

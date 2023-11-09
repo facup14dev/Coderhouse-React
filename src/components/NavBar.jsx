@@ -147,7 +147,7 @@ function ResponsiveAppBar() {
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <Link to={`/category/${"mujer"}`}>
+              <Link to={`/category/${"Mujer"}`}>
                 <Button
                   onClick={handleCloseNavMenu}
                   sx={{ my: 1, color: 'white', display: 'block', fontSize: 18.5, paddingRight: 3 }}
@@ -155,7 +155,7 @@ function ResponsiveAppBar() {
                   Mujer
                 </Button>
               </Link>
-              <Link to={`/category/${"hombre"}`}>
+              <Link to={`/category/${"Hombre"}`}>
                 <Button
                   onClick={handleCloseNavMenu}
                   sx={{ my: 1, color: 'white', display: 'block', fontSize: 18.5, paddingRight: 3 }}
@@ -163,7 +163,7 @@ function ResponsiveAppBar() {
                   Hombre
                 </Button>
               </Link>
-              <Link to={`/category/${"niño"}`}>
+              <Link to={`/category/${"Niño"}`}>
                 <Button
                   onClick={handleCloseNavMenu}
                   sx={{ my: 1, color: 'white', display: 'block', fontSize: 18.5, paddingRight: 3 }}

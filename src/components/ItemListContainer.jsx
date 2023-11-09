@@ -23,8 +23,6 @@ const ItemListContainer = () => {
 
   const productoFiltrado = productos.filter((producto) => producto.category == category)
 
-  console.log(productos)
-
   return (
     <>
 

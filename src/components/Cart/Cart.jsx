@@ -1,11 +1,12 @@
 import React from 'react'
+import DeleteIcon from '@mui/icons-material/Delete';
 import './Cart.css'
 import { useContext } from 'react'
 import { CartContext } from '../../context/ShoppingCartContext'
 
 const Cart = () => {
 
-  const { cart } = useContext(CartContext)
+  const { cart, clearCart } = useContext(CartContext)
 
   return (
 
@@ -36,7 +37,7 @@ const Cart = () => {
                 <p> {productos.size} </p>
                 <button className="cartitems-quantity"> {productos.cantidad} </button>
                 <p> $ {productos.price * productos.cantidad} </p>
-                <p>X</p>
+                <DeleteIcon sx={{ cursor: 'pointer' }} onClick={() => clearCart(productos.id, productos.size)} />
               </div>
               <hr />
 
@@ -45,14 +46,16 @@ const Cart = () => {
           )
         }
       })}
-      
+
+      {/* { cart ? <button onClick={clearCart}> <span>VACIAR CART</span> </button> : <button> <span>VOLVER AL INICIO</span> </button>  } */}
+
       <div className="cartitems-down">
         <div className="cartitems-total">
           <h1>Total</h1>
           <div>
             <div className="cartitems-total-item">
               <p>Subtotal</p>
-              <p>$  {0} </p>
+              <p>$  {} </p>
             </div>
             <hr />
             <div className="cartitems-total-item">

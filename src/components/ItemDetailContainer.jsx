@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail/ItemDetail'
+import Loader from './Loader/Loader'
 
 
 const ItemDetailContainer = () => {
 
   const { id } = useParams()
   const [producto, setProducto] = useState([])
+  const [loading, setLoading] = useState(true);
 
   const getProducto = () => {
     const db = getFirestore()
@@ -19,6 +21,9 @@ const ItemDetailContainer = () => {
       .catch((error) => {
         console.log(error)
       })
+      .finally(() => {
+        setLoading(false);
+      })
   }
 
   useEffect(() => {
@@ -28,7 +33,11 @@ const ItemDetailContainer = () => {
   return (
     <>
 
+      { loading ? (
+        <Loader/>
+      ) : ( 
       <ItemDetail productos={producto} />
+      )}
 
     </>
   )

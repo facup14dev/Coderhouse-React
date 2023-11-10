@@ -14,14 +14,12 @@ export const ShoppingCartProvider = ({
         setSelectedSize(size);
     };
 
-
     const decrementCount = () => {
         if (count > 1) { setCount(count - 1); }
     }
     const incrementCount = () => {
         setCount(count + 1)
     }
-
 
     const addCart = (producto) => {
 
@@ -49,10 +47,15 @@ export const ShoppingCartProvider = ({
         setCart(carritoActualizado);
     };
 
+    const clearCart = (productId, size) => {
+        const updatedCart = cart.filter((item) => item.id !== productId || item.size !== size);
+        setCart(updatedCart);
+        setCountCart(countCart - 1);
+      };
 
 
     return (
-        <CartContext.Provider value={{ cart, setCart, count, decrementCount, incrementCount, selectedSize, setSelectedSize, countCart, setCountCart, handleSizeClick, addCart }}>
+        <CartContext.Provider value={{ cart, setCart, count, decrementCount, incrementCount, selectedSize, setSelectedSize, countCart, setCountCart, handleSizeClick, addCart, clearCart }}>
             {children}
         </CartContext.Provider>
 

@@ -11,6 +11,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <ShoppingCartProvider>
+
           <Navbar />
 
           <Routes>
@@ -24,6 +25,7 @@ const App = () => {
           </Routes>
 
           <Footer />
+
         </ShoppingCartProvider>
       </BrowserRouter>
     </>

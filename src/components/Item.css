@@ -14,11 +14,14 @@
     max-width: 300px;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
 }
 
 .card img {
     height: 300px;
     width: 100%; 
+    border-radius: 5px;
 }
 
 .price {
@@ -40,5 +43,5 @@
 }
 
 .card button:hover {
-    opacity: 0.7;
+    opacity: 0.9;
 }

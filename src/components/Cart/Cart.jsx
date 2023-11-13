@@ -31,11 +31,11 @@ const Cart = () => {
           return (
             <div>
               <div className="cartitems-format cartitems-format-main">
-                <img src={productos.img} alt="" className='carticon-product-icon' />
+                <img src={productos.img} alt="Tu producto" className='carticon-product-icon' />
                 <p> {productos.name} </p>
                 <p> $ {productos.price} </p>
                 <p> {productos.size} </p>
-                <button className="cartitems-quantity"> {productos.cantidad} </button>
+                <p> {productos.cantidad} </p>
                 <p> $ {productos.price * productos.cantidad} </p>
                 <DeleteIcon sx={{ cursor: 'pointer' }} onClick={() => clearCart(productos.id, productos.size)} />
               </div>

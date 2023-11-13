@@ -30,6 +30,7 @@ const ItemListContainer = () => {
   }, [])
 
   const productoFiltrado = productos.filter((producto) => producto.category == category)
+  const productoFiltradoDiscount = productos.filter((producto) => producto.discount > 10000)
 
   return (
     <>

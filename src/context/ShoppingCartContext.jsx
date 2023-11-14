@@ -26,8 +26,6 @@ export const ShoppingCartProvider = ({
         const carritoActualizado = [...cart];
         const productoExistente = carritoActualizado.find((item) => item.id === producto.id && item.size === selectedSize);
 
-
-
         if (productoExistente) {
             productoExistente.cantidad += count;
         } else {
@@ -51,11 +49,20 @@ export const ShoppingCartProvider = ({
         const updatedCart = cart.filter((item) => item.id !== productId || item.size !== size);
         setCart(updatedCart);
         setCountCart(countCart - 1);
-      };
+    };
+
+    const cartTotal = () => {
+        let total = 0;
+        for (const item of cart) {
+            total += item.price * item.cantidad;
+        }
+        total = parseFloat(total.toFixed(3));
+        return total;
+    };
 
 
     return (
-        <CartContext.Provider value={{ cart, setCart, count, decrementCount, incrementCount, selectedSize, setSelectedSize, countCart, setCountCart, handleSizeClick, addCart, clearCart }}>
+        <CartContext.Provider value={{ cart, setCart, count, decrementCount, incrementCount, selectedSize, setSelectedSize, countCart, setCountCart, handleSizeClick, addCart, clearCart, cartTotal }}>
             {children}
         </CartContext.Provider>
 

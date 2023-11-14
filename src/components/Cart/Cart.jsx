@@ -3,6 +3,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import './Cart.css'
 import { useContext } from 'react'
 import { CartContext } from '../../context/ShoppingCartContext'
+import SendOrders from '../SendOrders';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
@@ -12,18 +14,22 @@ const Cart = () => {
 
     <div className="cartitems">
 
-      <h1>Tu compra</h1>
+      {cart.length ?
+        <div>
+          <h1>Tu compra</h1>
 
-      <div className="cartitems-format-main">
-        <p>Productos</p>
-        <p>Nombre</p>
-        <p>Precio</p>
-        <p>Talle</p>
-        <p>Cantidad</p>
-        <p>Total</p>
-        <p>Eliminar</p>
-      </div>
-      <hr />
+          <div className="cartitems-format-main">
+            <p>Productos</p>
+            <p>Nombre</p>
+            <p>Precio</p>
+            <p>Talle</p>
+            <p>Cantidad</p>
+            <p>Total</p>
+            <p>Eliminar</p>
+          </div>
+          <hr /> 
+        </div> : ''
+    } 
 
       {cart.map((productos) => {
         if (productos.id) {
@@ -47,43 +53,27 @@ const Cart = () => {
         }
       })}
 
-      {/* { cart ? <button onClick={clearCart}> <span>VACIAR CART</span> </button> : <button> <span>VOLVER AL INICIO</span> </button>  } */}
-
-      <div className="cartitems-down">
-        <div className="cartitems-total">
-          <h1>Total</h1>
-          <div>
-            <div className="cartitems-total-item">
-              <p>Subtotal</p>
-              <p>$  {} </p>
-            </div>
-            <hr />
-            <div className="cartitems-total-item">
-              <p>Envio</p>
-              <p>Gratis</p>
-            </div>
-            <hr />
-            <div className="cartitems-total-item">
-              <h3>Total</h3>
-              <h3>$  {0}</h3>
-            </div>
+      {cart.length ?
+        (
+          <SendOrders />
+        ) : (
+          <div className='back'>
+            <img src="../src\assets\images\empty-cart.png" alt="Carrito vacio" />
+            <h1>Su carrito esta vacio</h1>
+            <Link to={"/"} >
+              <button className='btn-home'>REGRESAR AL INICIO</button>
+            </Link>
           </div>
-          <button>PROCEDER A LA COMPRA</button>
-        </div>
-        <div className="cartitems-promocode">
-          <p> | Si tienes un código de descuento, ingreselo aqui</p>
-          <div className="cartitems-promobox">
-            <input type="text" placeholder='Codigo de Promoción' />
-            <button>Aplicar Descuento</button>
-          </div>
-        </div>
-      </div>
 
-    </div>
+        )
+      }
+    </div >
+
 
   )
 
 
 }
+
 
 export default Cart

@@ -1,0 +1,62 @@
+.frm-order {
+    display: flex;
+    flex-direction: column;
+}
+
+.frm-order input {
+    margin-top: 80px;
+    width: 504px;
+    margin-top: 15px;
+    height: 40px;
+    background: #eaeaea;
+    border: 1px solid black;
+    font-size: 25px;
+    text-align: center;
+}
+
+.frm-order label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 15px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    border:  2px solid black;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-buy {
+    width: 250px;
+    height: 60px;
+    font-size: 18px;
+    background: #ff5a5a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0px auto;
+}
+
+.img-check {
+    height: 300px;
+    width: 300px;
+}
+
+.buyout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

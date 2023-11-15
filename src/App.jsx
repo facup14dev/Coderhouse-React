@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ShoppingCartProvider from "./context/ShoppingCartContext";
+import BuyOut from "./components/BuyOut";
 
 const App = () => {
   return (
@@ -22,6 +23,8 @@ const App = () => {
             <Route exact path="/product/:id" element={<ItemDetailContainer />} />
 
             <Route exact path="/category/:category" element={<ItemListContainer />} />
+
+            <Route exact path="/buyout" element={<BuyOut />} />
           </Routes>
 
           <Footer />

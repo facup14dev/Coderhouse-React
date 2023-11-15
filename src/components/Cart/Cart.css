@@ -8,7 +8,7 @@
     margin: 100px;
 }
 
-.cartitems hr{
+.cartitems hr {
     height: 3px;
     background: #e2e2e2;
     border: 0;
@@ -36,7 +36,7 @@
     cursor: pointer;
 }
 
-.cartitems-quantity{
+.cartitems-quantity {
     width: 64px;
     height: 50px;
     border: 2px solid #ebebeb;
@@ -56,7 +56,7 @@
     gap: 40px;
 }
 
-.cartitems-total p{
+.cartitems-total p {
     font-weight: 600;
 }
 
@@ -66,7 +66,7 @@
     padding: 15px 0px;
 }
 
-.cartitems-total button{
+.cartitems-total button {
     width: 262px;
     height: 58px;
     outline: none;
@@ -89,12 +89,11 @@
 .cartitems-promobox {
     width: 504px;
     margin-top: 15px;
-    padding-left: 20px;
     height: 58px;
     background: #eaeaea;
 }
 
-.cartitems-promobox input {
+.inp-dsc {
     border: none;
     outline: none;
     background: transparent;
@@ -103,7 +102,7 @@
     height: 50px;
 }
 
-.cartitems-promobox button {
+.btn-dsc {
     width: 170px;
     height: 58px;
     font-size: 16px;
@@ -112,13 +111,30 @@
     cursor: pointer;
 }
 
+.buy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-buy {
+    width: 250px;
+    height: 60px;
+    font-size: 18px;
+    background: #ff5a5a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 .back {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
-    text-align: center; 
-  }
+    text-align: center;
+}
 
 .btn-home {
     width: 262px;
@@ -129,4 +145,47 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+}
+
+
+.frm-order {
+    display: flex;
+    flex-direction: column;
+}
+
+.frm-order input {
+    margin-top: 80px;
+    width: 504px;
+    margin-top: 15px;
+    height: 58px;
+    background: #eaeaea;
+    border: 1px solid black;
+    font-size: 25px;
+    text-align: center;
+}
+
+.frm-order label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 58px;
+    font-size: 16px;
+    margin-top: 15px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    border:  2px solid black;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inp-name::placeholder, .inp-mail::placeholder, .inp-dsc::placeholder {
+  font-size: 18px; 
+  color: black;
+  text-align: center;
 }

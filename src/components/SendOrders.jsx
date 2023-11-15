@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
+import '../components/Cart/Cart.css'
+import { Link } from 'react-router-dom'
 
 const SendOrders = () => {
 
@@ -48,23 +50,37 @@ const SendOrders = () => {
                             <h3>$  {cartTotal()}</h3>
                         </div>
                     </div>
-                    <button>PROCEDER A LA COMPRA</button>
                 </div>
                 <div className="cartitems-promocode">
                     <p> | Si tienes un código de descuento, ingreselo aqui</p>
                     <div className="cartitems-promobox">
-                        <input type="text" placeholder='Codigo de Promoción' />
-                        <button>Aplicar Descuento</button>
+                        <input className='inp-dsc' type="text" placeholder='Codigo de Promoción' />
+                        <button className='btn-dsc' >Aplicar Descuento</button>
 
-                        <form action="" onSubmit={handleSubmit}>
-                            <input type="text" placeholder='Nombre' onChange={(e) => setNombre(e.target.value)} />
-                            <input type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
+                        <form action="" className='frm-order'>
 
-                            <button type="submit">Enviar</button>
+                            <h1>Sus datos</h1>
+                            <div className="name">
+                                <label htmlFor="inp-name">Nombre</label>
+                                <input id='inp-name' className='inp-name' type="text" placeholder='Nombre' onChange={(e) => setNombre(e.target.value)} />
+                            </div>
+                            <div className="name">
+
+                                <label htmlFor="inp-mail">Email</label>
+                                <input id='inp-mail' className='inp-mail' type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
+                            </div>
+
+                            {/* <button type="submit">Enviar</button> */}
                         </form>
-                        <p>Su número de orden es: {orderId}</p>
+                        {/* <p>Su número de orden es: {orderId}</p> */}
                     </div>
                 </div>
+            </div>
+
+            <div className='buy-container'>
+                <Link to={"/buyout"}>
+                    <button className='btn-buy'>PROCEDER A LA COMPRA</button>
+                </Link>
             </div>
         </div>
     )

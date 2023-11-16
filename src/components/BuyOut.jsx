@@ -1,10 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
+import { useContext } from 'react'
+import { CartContext } from '../context/ShoppingCartContext'
 import './BuyOut.css'
 
 
 const BuyOut = () => {
+
+  const { setCountCart, setCart } = useContext(CartContext)
 
   const [nombre, setNombre] = useState('')
   const [email, setEmail] = useState('')
@@ -18,7 +22,9 @@ const BuyOut = () => {
 
     addDoc(ordersCollection, order).then(({ id }) =>
       setOrderId(id))
-    setShowForm(false)
+      setCountCart(0)
+      setShowForm(false)
+      setCart([])
   }
 
   const order = {
@@ -28,7 +34,7 @@ const BuyOut = () => {
 
   const ordersCollection = collection(db, 'Orden')
 
-  console.log(showForm)
+
 
   return (
 
@@ -39,7 +45,8 @@ const BuyOut = () => {
 
         <form action="" onSubmit={handleSubmit} className='frm-order'>
 
-          <h1>Sus datos</h1>
+          <h1 className='titulo-categoria'>DATOS PARA SU COMPRA</h1>
+          <hr className='hr'></hr>
 
           <div className="name">
             <label htmlFor="inp-name">Nombre</label>
@@ -50,8 +57,18 @@ const BuyOut = () => {
             <label htmlFor="inp-mail">Email</label>
             <input id='inp-mail' className='inp-mail' type="email" placeholder='Email' required onChange={(e) => { setEmail(e.target.value); handleInputChange(e) }} />
           </div>
+          <div className="name">
 
-          <button type="submit" className='btn-buy'>Enviar</button>
+            <label htmlFor="inp-mail">Dirección</label>
+            <input id='inp-mail' className='inp-mail' type="text" placeholder='Dirección' onChange={(e) => { setEmail(e.target.value); handleInputChange(e) }} />
+          </div>
+          <div className="name">
+
+            <label htmlFor="inp-mail">Telefono</label>
+            <input id='inp-mail' className='inp-mail' type="number" placeholder='Telefono' onChange={(e) => { setEmail(e.target.value); handleInputChange(e) }} />
+          </div>
+
+          <button type="submit" className='btn-buy'>CONFIRMAR COMPRA</button>
 
         </form>
       )}
@@ -67,7 +84,7 @@ const BuyOut = () => {
 
           <h2>N° Orden de Compra: {orderId} </h2>
 
-        </div> }
+        </div>}
 
     </div>
 

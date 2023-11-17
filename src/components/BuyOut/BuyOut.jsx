@@ -78,7 +78,7 @@ const BuyOut = () => {
       {showForm ? '' :
         <div className="buyout">
 
-          <img src="/src/assets/images/check.png" alt="Compra realiazada con exito." className='img-check' />
+          <img src="../../src/assets/images/check.png" alt="Compra realiazada con exito." className='img-check' />
           <h1>¡Gracias por tu compra!</h1>
           <h4>Tu solicitud de compra fue recibida</h4>
           <p>Tu pedido se encuentra en proceso de validación, en breve recibiras un correo con el detalle de tu compra.</p>

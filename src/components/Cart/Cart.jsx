@@ -58,7 +58,7 @@ const Cart = () => {
           <SendOrders />
         ) : (
           <div className='back'>
-            <img src="/src/assets/images/empty-cart.png" alt="Carrito vacio" />
+            <img src="../../src/assets/images/empty-cart.png" alt="Carrito vacio" />
             <h1>Su carrito esta vacio</h1>
             <Link to={"/"} >
               <button className='btn-home'>REGRESAR AL INICIO</button>

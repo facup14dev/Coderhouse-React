@@ -15,7 +15,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Logo from '../../public/icons/logo.png'
+import Logo from '../../public/images/logo.png'
 import { Link } from 'react-router-dom';
 
 import { useContext } from 'react'

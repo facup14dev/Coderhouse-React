@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../context/ShoppingCartContext'
 import SendOrders from '../SendOrders';
 import { Link } from 'react-router-dom';
+import EmptyCart from '../../../public/images/empty-cart.png'
 
 const Cart = () => {
 
@@ -58,7 +59,7 @@ const Cart = () => {
           <SendOrders />
         ) : (
           <div className='back'>
-            <img src="../../src/assets/images/empty-cart.png" alt="Carrito vacio" />
+            <img src={EmptyCart} alt="Carrito vacio" />
             <h1>Su carrito esta vacio</h1>
             <Link to={"/"} >
               <button className='btn-home'>REGRESAR AL INICIO</button>

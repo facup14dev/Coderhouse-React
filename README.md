@@ -1,9 +1,10 @@
 # Proyecto Curso React
 
-Proyecto E-Commerce.
+Proyecto final de E-Commerce para la plataforma Coderhouse.
 
 ## Gif de demostración
-![gif](https://github.com/facup14dev/Coderhouse-React/assets/131388989/ddcfe506-d52c-45ab-8965-656b185a8ce4)
+
+![gif new](https://github.com/facup14dev/Coderhouse-React/assets/131388989/a5dec765-430c-45a0-8fbb-f75e9a239439)
 
 ### npm install
 ### npm run dev

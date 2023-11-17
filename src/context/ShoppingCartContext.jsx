@@ -10,10 +10,12 @@ export const ShoppingCartProvider = ({
     const [cart, setCart] = useState([])
     const [selectedSize, setSelectedSize] = useState('S')
 
+    //Tamaño elegido del producto
     const handleSizeClick = (size) => {
         setSelectedSize(size);
     };
 
+    //Cantidades del prodcuto.
     const decrementCount = () => {
         if (count > 1) { setCount(count - 1); }
     }
@@ -21,6 +23,7 @@ export const ShoppingCartProvider = ({
         setCount(count + 1)
     }
 
+    //Añade el prodcuto al carrito, si ya existe y es el mismo tamaño aumenta su cantidad si es el mismo producto pero distinta cantidad agrega un producto nuevo.
     const addCart = (producto) => {
 
         const carritoActualizado = [...cart];
@@ -45,12 +48,14 @@ export const ShoppingCartProvider = ({
         setCart(carritoActualizado);
     };
 
+    //Elimina el producto del carrito.
     const clearCart = (productId, size) => {
         const updatedCart = cart.filter((item) => item.id !== productId || item.size !== size);
         setCart(updatedCart);
         setCountCart(countCart - 1);
     };
 
+    //Funcion que calcula el total del carrito.
     const cartTotal = () => {
         let total = 0;
         for (const item of cart) {

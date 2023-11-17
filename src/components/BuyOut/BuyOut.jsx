@@ -19,14 +19,16 @@ const BuyOut = () => {
 
   const db = getFirestore()
 
+
+  //Añade a la base de datos la orden de compra, vacia el carrito y la cantidad de productos en el carrito (Badge)
   const handleSubmit = (e) => {
     e.preventDefault()
 
     addDoc(ordersCollection, order).then(({ id }) =>
       setOrderId(id))
-    setCountCart(0)
-    setShowForm(false)
-    setCart([])
+      setCountCart(0)
+      setShowForm(false)
+      setCart([])
   }
 
   const order = {
@@ -35,8 +37,6 @@ const BuyOut = () => {
   }
 
   const ordersCollection = collection(db, 'Orden')
-
-
 
   return (
 

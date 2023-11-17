@@ -7,7 +7,6 @@ import Logo from '../../../public/images/logo.png'
 
 const Footer = () => {
 
-
     return (
         <div className="footer">
             <div className="footer-logo">

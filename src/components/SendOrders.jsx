@@ -31,17 +31,18 @@ const SendOrders = () => {
                     </div>
                 </div>
                 <div className="cartitems-promocode">
-                    <h3> | Si tienes un código de descuento, ingreselo aqui</h3>
-                    <div className="cartitems-promobox">
 
-                        <input className='inp-dsc' type="text" placeholder='Codigo de Promoción' />
-                        <button className='btn-dsc' >Aplicar Descuento</button>
+                    {/* Proximamente... para aplicar descuentos*/}
+                    {/* <div className="cartitems-promobox"> */}
+                    {/* <h3> | Si tienes un código de descuento, ingreselo aqui</h3> */}
+                    {/* <input className='inp-dsc' type="text" placeholder='Codigo de Promoción' />
+                        <button className='btn-dsc' onClick={aplicarDescuento()}>Aplicar Descuento</button> */}
+                    {/* </div> */}
 
-                        <Link to={"/buyout"}>
-                            <button className='btn-buy'>FINALIZAR COMPRA</button>
-                        </Link>
+                    <Link to={"/buyout"}>
+                        <button className='btn-buy'>FINALIZAR COMPRA</button>
+                    </Link>
 
-                    </div>
                 </div>
             </div>
         </div>

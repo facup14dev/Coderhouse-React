@@ -22,7 +22,7 @@ import { useContext } from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
 
 
-
+//Tema para color negro del NavBar de Material UI
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -42,6 +42,7 @@ function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  //Proximemente... Datos del usuario logeado en la pág.
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };

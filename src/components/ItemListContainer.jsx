@@ -18,6 +18,7 @@ const ItemListContainer = () => {
 
     const itemsCollection = collection(db, 'ropa')
 
+    //Cargo los productos de la base de datos de Firebase.
     getDocs(itemsCollection)
       .then((response) => {
         setProductos(response.docs.map((doc) => ({ id: doc.id, ...doc.data() })));

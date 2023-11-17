@@ -2,8 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import './Item.css'
 
-const Item = ({ name, description, price, stock, id, img }) => {
-
+const Item = ({ name, description, price, id, img }) => {
 
   return (
 

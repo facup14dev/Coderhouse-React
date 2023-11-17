@@ -11,6 +11,7 @@ const ItemDetailContainer = () => {
   const [producto, setProducto] = useState([])
   const [loading, setLoading] = useState(true);
 
+  //Cargo los productos de la base de datos de Firebase.
   const getProducto = () => {
     const db = getFirestore()
     const item = doc(db, "ropa", `${id}`)

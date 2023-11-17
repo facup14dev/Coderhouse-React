@@ -10,6 +10,7 @@ const Counter = ({ productos }) => {
 
   const { count, decrementCount, incrementCount, selectedSize, addCart, handleSizeClick } = useContext(CartContext)
 
+  //toastify
   const notify = () => toast.success("¡Se añadio su producto al carrito!", {position: "top-right", autoClose: 2000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "light",});
 
   return (

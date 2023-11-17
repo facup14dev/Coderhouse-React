@@ -3,7 +3,7 @@ import './Footer.css'
 import facebookIcon from '../../../public/images/facebook.png'
 import InstagramIcon from '../../../public/images/instagram.png'
 import PinterestIcon from '../../../public/images/pinterest.png'
-import Logo from '../../../public/icons/logo.png'
+import Logo from '../../../public/images/logo.png'
 
 const Footer = () => {
 

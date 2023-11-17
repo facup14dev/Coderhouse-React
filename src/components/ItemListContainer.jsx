@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import ItemList from './ItemList'
 import Loader from './Loader/Loader'
+import Banner from '../../../public/images/banner.jpg'
 
 
 const ItemListContainer = () => {
@@ -59,7 +60,7 @@ const ItemListContainer = () => {
 
           {category ? '' : (
             <>
-              <img className='banner' src='../public\banner.jpg' alt="banner de ofertas" />
+              <img className='banner' src={Banner} alt="banner de ofertas" />
 
               <h1 className='titulo-categoria'>Todos nuestros productos</h1>
 

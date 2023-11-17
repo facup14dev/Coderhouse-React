@@ -2,7 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
 import { useContext } from 'react'
-import { CartContext } from '../context/ShoppingCartContext'
+import { CartContext } from '../../context/ShoppingCartContext'
+import { Link } from 'react-router-dom';
 import './BuyOut.css'
 
 
@@ -22,9 +23,9 @@ const BuyOut = () => {
 
     addDoc(ordersCollection, order).then(({ id }) =>
       setOrderId(id))
-      setCountCart(0)
-      setShowForm(false)
-      setCart([])
+    setCountCart(0)
+    setShowForm(false)
+    setCart([])
   }
 
   const order = {
@@ -82,7 +83,14 @@ const BuyOut = () => {
           <h4>Tu solicitud de compra fue recibida</h4>
           <p>Tu pedido se encuentra en proceso de validación, en breve recibiras un correo con el detalle de tu compra.</p>
 
-          <h2>N° Orden de Compra: {orderId} </h2>
+          <h2 className='h2-order2'>Pueden hacer el seguimiento de tu compra con el siguiente número</h2>
+          <h2 className='h2-order'>N° Orden de Compra: <span>{orderId}</span> </h2>
+
+          <div className='back'>
+            <Link to={"/"} >
+              <button className='btn-compras'>REALIZA MAS COMPRAS</button>
+            </Link>
+          </div>
 
         </div>}
 

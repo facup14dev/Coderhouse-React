@@ -5,7 +5,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ShoppingCartProvider from "./context/ShoppingCartContext";
-import BuyOut from "./components/BuyOut";
+import BuyOut from "./components/BuyOut/BuyOut";
 
 const App = () => {
   return (

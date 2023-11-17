@@ -32,10 +32,12 @@ const ItemListContainer = () => {
 
   }, [])
 
-  const handleSortChange = (event) => {
+
+  const handleOrderChange = (event) => {
     setSortBy(event.target.value);
   };
 
+  //Ordena los productos segun la seleccion, priceasc de menor a mayor precio, name por nombre y pricedsc por precio mayor a menor
   const sortedProductos = () => {
     let sorted = [...productos];
 
@@ -67,7 +69,7 @@ const ItemListContainer = () => {
 
               <label className='lbl-filter'>
                 Ordenar por: 
-                <select className='slt-filter' value={sortBy} onChange={handleSortChange}>
+                <select className='slt-filter' value={sortBy} onChange={handleOrderChange}>
                   <option value=''>Seleccione...</option>
                   <option value='priceasc'>Precio ↓</option>
                   <option value='pricedsc'>Precio ↑</option>

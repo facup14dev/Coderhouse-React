@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import ItemList from './ItemList'
 import Loader from './Loader/Loader'
-import Banner from '../../../public/images/banner.jpg'
+import Banner from '../../public/images/banner.jpg'
 
 
 const ItemListContainer = () => {
